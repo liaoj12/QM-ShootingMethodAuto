@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      2478,         79]
-NotebookOptionsPosition[      2066,         62]
-NotebookOutlinePosition[      2420,         78]
-CellTagsIndexPosition[      2377,         75]
+NotebookDataLength[      7365,        211]
+NotebookOptionsPosition[      6614,        186]
+NotebookOutlinePosition[      6968,        202]
+CellTagsIndexPosition[      6925,        199]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -25,6 +25,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.729561734430477*^9, 
   3.7295617456204777`*^9}},ExpressionUUID->"109e273b-5b3c-49b7-af30-\
 cba0aa1ca415"],
+
+Cell[CellGroupData[{
 
 Cell[BoxData[{
  RowBox[{
@@ -41,24 +43,146 @@ Cell[BoxData[{
   RowBox[{"cList", "=", 
    RowBox[{"data", "[", 
     RowBox[{"[", 
-     RowBox[{"All", ",", "2"}], "]"}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
+     RowBox[{"All", ",", "2"}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+
  RowBox[{
-  RowBox[{"dat", "=", 
-   RowBox[{"Transpose", "@", 
-    RowBox[{"{", 
-     RowBox[{"rList", ",", "cList"}], "}"}]}]}], ";"}], "\[IndentingNewLine]", 
- RowBox[{"ListPlot", "[", 
-  RowBox[{"dat", ",", 
-   RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], "Input",
+  RowBox[{
+   RowBox[{"eList", "=", 
+    RowBox[{"data", "[", 
+     RowBox[{"[", 
+      RowBox[{"All", ",", "3"}], "]"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"rcPlot", "=", 
+  RowBox[{"ListLinePlot", "[", 
+   RowBox[{
+    RowBox[{"Transpose", "@", 
+     RowBox[{"{", 
+      RowBox[{"rList", ",", "cList"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "All"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"rePlot", "=", 
+  RowBox[{"ListPlot", "[", 
+   RowBox[{
+    RowBox[{"Transpose", "@", 
+     RowBox[{"{", 
+      RowBox[{"rList", ",", "eList"}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", "All"}]}], 
+   "]"}]}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.729561748100052*^9, 3.729561798676602*^9}, {
   3.729562132220056*^9, 3.729562192063487*^9}, {3.729562276301319*^9, 
   3.7295623611988573`*^9}, {3.729562680110594*^9, 3.729562714881686*^9}, {
   3.7295666779243603`*^9, 3.729566695873423*^9}, {3.72960158922478*^9, 
   3.72960159902855*^9}, {3.7296023653718643`*^9, 3.729602394774362*^9}, {
   3.729602978007853*^9, 3.7296029907831793`*^9}, {3.72961139896119*^9, 
-  3.7296114134932213`*^9}},ExpressionUUID->"4544ec0e-f637-4ccb-a154-\
-50a7b6398d27"]
+  3.7296114134932213`*^9}, {3.729966391515504*^9, 3.729966392067095*^9}, {
+  3.7299664226397257`*^9, 3.7299664809585953`*^9}, {3.729966511813426*^9, 
+  3.729966532744207*^9}},ExpressionUUID->"4544ec0e-f637-4ccb-a154-\
+50a7b6398d27"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, {{
+       {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+        0.019444444444444445`], AbsoluteThickness[1.6], 
+        LineBox[CompressedData["
+1:eJxTTMoPSmViYGCQAmIQfdk3SSDC8oH9qa6Hrxg6Dtv/u1LxUs0Qxr9srxnT
+f+irBoIf8njp7CMKCH591p6SyRII/qqPl4AmIvhXQcZxIPgMYADjP7YP49Pd
+NPf9fTh/jUxUivV9BJ9Ju13s5jkEP8Jyy4myfQj+OveHVSLrEHwWsIEIPsg0
+/14Ef0NRxsS3NQg+W+NU5+4cBB/s3Zj79nMWKe/80/7ZHui45ce8EXwOiAPh
+/LhdnjxM2gg+yHXzpRB8ruuLC2y5EPyEpxeUbv+8B+dv+/wXGOIIPg/Ywwg+
+AEl04tY=
+         "]]}}}}}, {}, {}, {{}, {}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.48160937500000006`, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0.482, 0.507}, {0, 1.2207}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.729966346747414*^9, {3.7299663767921543`*^9, 3.72996639333783*^9}, {
+   3.729966486730794*^9, 
+   3.729966533245977*^9}},ExpressionUUID->"3310e5d7-9e53-4399-8115-\
+522773a093aa"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {{
+       {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+        0.012833333333333334`], AbsoluteThickness[1.6], 
+        PointBox[CompressedData["
+1:eJxTTMoPSmViYGCQAmIQfdk3SSDC8oF9reKTPf/77+//d6XipZrhA/ucVzZa
+/97f268Z03/oqwaCH/J46ewjCgh+fdaekskSCP2rPl4CmojgXwUZx/HA3n3N
+0eUMEg/2M4ABQn8Yn+6mue/vw/lrZKJSrO/fh+tn0m4Xu3kOwY+w3HKibN99
+uHnr3B9WiaxD8FnABt633xlsFfE//cF+kGn+vQj+hqKMiW9r7ts7vu9VZNjx
+YD9b41Tn7hwEH+zdGIR7gI5bfswbweeAOBDunrhdnjxM2gg+yHXzpRDu4bq+
+uMCWC8FPeHpB6fbPe3D3bPv8FxjiCD4P2MP34O4BAEad5R8=
+         
+         "]]}}}, {}}}, {}, {}, {{}, {}}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.48160937500000006`, -0.48144485000000004`},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Identity[#]& )[
+         Part[#, 1]], 
+        (Identity[#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0.482, 0.507}, {-0.522461, -0.483398}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.729966346747414*^9, {3.7299663767921543`*^9, 3.72996639333783*^9}, {
+   3.729966486730794*^9, 
+   3.729966533285254*^9}},ExpressionUUID->"6a6c76f5-ad8b-48db-a9f4-\
+9153081f922f"]
+}, Open  ]],
+
+Cell["\<\
+C has a \[OpenCurlyDoubleQuote]cut-off\[CloseCurlyDoubleQuote] property; what \
+I means here is that for a given value of R, when C is lower than C_cutoff, \
+it doesn\[CloseCurlyQuote]t change the corresponding bound state energy, \
+which is around -0.5(-13.5eV) here.\
+\>", "Text",
+ CellChangeTimes->{{3.730027012729683*^9, 
+  3.7300270844458733`*^9}},ExpressionUUID->"e01ee536-c6d5-4edc-87ea-\
+b7ba40116aa1"]
 },
 WindowSize->{720, 856},
 WindowMargins->{{-4, Automatic}, {Automatic, 0}},
@@ -79,8 +203,16 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 251, 6, 32, "Input", "ExpressionUUID" -> \
 "109e273b-5b3c-49b7-af30-cba0aa1ca415"],
-Cell[812, 28, 1250, 32, 117, "Input", "ExpressionUUID" -> \
-"4544ec0e-f637-4ccb-a154-50a7b6398d27"]
+Cell[CellGroupData[{
+Cell[834, 30, 1837, 48, 180, "Input", "ExpressionUUID" -> \
+"4544ec0e-f637-4ccb-a154-50a7b6398d27"],
+Cell[2674, 80, 1708, 45, 240, "Output", "ExpressionUUID" -> \
+"3310e5d7-9e53-4399-8115-522773a093aa"],
+Cell[4385, 127, 1790, 46, 222, "Output", "ExpressionUUID" -> \
+"6a6c76f5-ad8b-48db-a9f4-9153081f922f"]
+}, Open  ]],
+Cell[6190, 176, 420, 8, 68, "Text", "ExpressionUUID" -> \
+"e01ee536-c6d5-4edc-87ea-b7ba40116aa1"]
 }
 ]
 *)

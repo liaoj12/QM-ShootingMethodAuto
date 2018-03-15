@@ -31,12 +31,12 @@ using namespace std;
 
 
 const double PRECISION = 0.01;
-const double REL_PRECI = 0.05;
+const double REL_PRECI = 0.01;
 const int    MAX_ITER  = 100;
 const double INCRE     = 0.001;
 const double dr        = 0.0001;
 const int    nstep     = int(50/dr);
-const int    pieces    = 507;
+const int    pieces    = 1;
 
 // functions declarations
 bool   root_found(double curr, double last);
@@ -64,7 +64,8 @@ int main(int argc, char* argv[])
 
   // variables used during calculation
   double R, C;
-  double E_b;
+  double E_b, E_tmp;
+  double last_E, last_C;
 
   // allocate memory for lists
   double *r_list      = new double[nstep+1];    // list for r, radial position
@@ -73,11 +74,11 @@ int main(int argc, char* argv[])
   double *euler_list  = new double[3];          // list for r_next, u_next, u'_next
   double *R_list      = new double[pieces];     // list for R
 
-  // break intervals from 0.001 to 0.507 into pieces for R
-  R_list[0] = INCRE;
+  // break intervals from 0.001 to 0.507 with step 0.002
+  R_list[0] = 0.507;
   for (int i=1; i<pieces; i++)
   {
-    R_list[i] = R_list[i-1] + INCRE;
+    R_list[i] = (2*i+1)*INCRE;
   }  // end for-loop
 
   // initial conditons
@@ -95,21 +96,58 @@ int main(int argc, char* argv[])
 
     cout << "searching for bound state energy with R=" << R << endl;
 
+    // start-C
+    C = 0.053;
+    last_E = 1;
+
+    // loop to find the C for which bound state energy is approximately -0.5
     while (true)
     {
-
-      // start-C
-      C = 10000;
-
-      // "binary search"
+      // "binary search energy"
       E_b = binary_search_E_bound(euler_list, r_list, du_list, u_list, R, C);
-      if (E_b < 0)
+      cout << "found: " << E_b << " with C: " << C << endl;
+      // check if it's close to 0.5
+      if (fabs((E_b+0.5)/0.5) <= REL_PRECI)
       {
-        cout << "The bound energy is: " << E_b << endl;
-        cout << "with C=: " << C << endl;
-        // write R and C into file
-        f_out << R << "\t" << C << endl;
+        // approach C to meet the precision
+        C = (C+last_C)/2;
+        while (!(fabs(C-last_C) <= PRECISION))
+        {
+          E_tmp = binary_search_E_bound(euler_list, r_list, du_list, u_list, R, C);
+          if (E_tmp > E_b)
+          {
+            last_C = C;
+          }
+        }
+
+        cout << "The bound energy is: " << E_b << " with C=: " << C << endl;
+        f_out << R << "\t" << C << "\t" << E_b << endl;
+        break;
       }
+
+      // check if C is out of range
+      if (C/2 <= PRECISION)
+      {
+        cout << "Couldn't find such C within certin precision." << endl;
+        break;
+      }
+
+      // update last if it isn't the first round
+      if (last_E < 0)
+      {
+        if (!((E_b-last_E)<=0))
+        {
+          cout << "Wrong searching direction for C in descending order" << endl;
+        }
+        else
+        {
+          C /= 2;
+        }
+      }
+      // update last to the newest E_b found
+      last_E = E_b;
+      last_C = C;
+
     } // end C-loop
 
   } // end R-loop
@@ -198,8 +236,7 @@ double binary_search_E_bound(double *euler_list, double *r_list, double*du_list,
                              double *u_list, double R, double C)
 {
   double last, curr;
-  double E_max, E_min, E_mid, E_curr = -10;
-  double E_b;
+  double E_max, E_min, E_mid, E_curr = -5;
   int curr_iter = 0;
 
   update(euler_list, r_list, du_list, u_list, E_curr, R, C);
@@ -220,7 +257,7 @@ double binary_search_E_bound(double *euler_list, double *r_list, double*du_list,
     if (root_found(curr, last))
     {
       E_min = E_curr;
-      // approach in order to meet the precision limit
+      // approach E to meet the precision
       while (!(fabs(E_max-E_min) <= PRECISION))
       {
         E_mid = (E_max+E_min)/2;
@@ -234,14 +271,7 @@ double binary_search_E_bound(double *euler_list, double *r_list, double*du_list,
           E_min = E_mid;
         }
       }  // end precision_while-loop
-
-      // check if it's close to 0.5
-      E_b = (E_max+E_min)/2;
-      if (fabs((E_b+0.5)/0.5) <= REL_PRECI)
-      {
-        cout << "E_b is: " << E_b << endl;
-        return E_b;
-      }
+      return (E_max+E_min)/2;
     }
 
     // update sign
@@ -254,7 +284,6 @@ double binary_search_E_bound(double *euler_list, double *r_list, double*du_list,
       continue;
     }
 
-    cout << "Can't find E for R=" << R << " and C=" << C << endl;
     return 1.0;
   }
 }
