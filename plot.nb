@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      7365,        211]
-NotebookOptionsPosition[      6614,        186]
-NotebookOutlinePosition[      6968,        202]
-CellTagsIndexPosition[      6925,        199]
+NotebookDataLength[      8790,        232]
+NotebookOptionsPosition[      8038,        207]
+NotebookOutlinePosition[      8392,        223]
+CellTagsIndexPosition[      8349,        220]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -79,21 +79,32 @@ Cell[BoxData[{
 50a7b6398d27"],
 
 Cell[BoxData[
- GraphicsBox[{{}, {{{}, {}, {{
-       {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
-        0.019444444444444445`], AbsoluteThickness[1.6], 
-        LineBox[CompressedData["
-1:eJxTTMoPSmViYGCQAmIQfdk3SSDC8oH9qa6Hrxg6Dtv/u1LxUs0Qxr9srxnT
-f+irBoIf8njp7CMKCH591p6SyRII/qqPl4AmIvhXQcZxIPgMYADjP7YP49Pd
-NPf9fTh/jUxUivV9BJ9Ju13s5jkEP8Jyy4myfQj+OveHVSLrEHwWsIEIPsg0
-/14Ef0NRxsS3NQg+W+NU5+4cBB/s3Zj79nMWKe/80/7ZHui45ce8EXwOiAPh
-/LhdnjxM2gg+yHXzpRB8ruuLC2y5EPyEpxeUbv+8B+dv+/wXGOIIPg/Ywwg+
-AEl04tY=
-         "]]}}}}}, {}, {}, {{}, {}}, {{}, {}}},
+ GraphicsBox[{{}, {{{}, {}, {
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889],
+        AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJxF1XtI01EUB/C1REQkwqSH2UMtMyRERKREftfMLEzKFiIiEmYhYmpptl6G
+iGwmISJmD8vMxAKRqBAVEUuzsrJ8tZbpEgkxe5ss0ah7zvz9vhfG+Pyxwz33
+POadkrX/sF6n0xnlh74HYlOWJmz9qPRcGPusMw8om5NKH8/4w+fT23LLV8JD
+xkm/IBfV40r8ki33r3+3adYHmJZbe+HG6LHTHo1wYmqYbe9F2LmgIrIkw6ZU
+3fJtmTdNKzJYfXcMnNy6200fALtaarPDXeGm6b+DxslRzZTNw2cwX68e5nAm
++AifUWXIKc6+yLxYuBd29NREwe3VnoEjG2B+Did4hbXXbhgf0dw54y9fEM7i
+gPBqGc25AH4aE1occRDOSSv7elaB1xVNxTWvhV/URMmUPygthm0J/0zLxEm+
+IOw7PJuf3ga/lreruwaf8aCKwJuCXBq8EmFHP8CO+sNcXvuwZi6HBebna4I5
+3QqYr5cLczgDHMxHta+QzVKZ6Q6XZEzM3f35XjO93qc3sEy2a/09mLo5qRQO
+44AwReuPhWVxZUvDSgh1IPxFVqNoyqr5ciYVGN7BF4R/yG4OLYar5O2Op8G7
+aDyirQv9GCx+Uzv7wTep/ZzhPZzwO81/qLxd8G0qRy28j56vEJ6ndFPgO3S9
+CPgAPyCs4wPLZpETbNFM05bXDjvxQrAo/DNzpJDJyoaGeb0kwS4cEKZo1Z6w
+LK7P8OxbzW68YGCqRlwzzOulEuZ1kAfz+MbDPG4hMI+Hh2qDeETtPD2k+Sg3
+DLyKE4afUHnL4GNUjmx4DS9A+DmlGwif4AaEvfkBBxd8SLx6SQc+Reu4Ad7I
+CxXu86GJg89xQ8OOfQ879rvqHMHreWJAM6/TbpjXXx3M66oI5vWSCvM6iFRd
+KHh8fWAeNz3M4zHWr5nbuUN1ueD2q4a5XfJhLm+y6lrB5QiH+fm8VD8Qlyjd
+ub4Fd4rt3IDwNwrXCl+9QgfeyX9I8K9+WqjwDfp7C4X/A2JnLAc=
+        
+        "]]}}}}, {}, {}, {{}, {}}, {{}, {}}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
-  AxesOrigin->{0.48160937500000006`, 0},
+  AxesOrigin->{0.2652812500000001, 0},
   DisplayFunction->Identity,
   Frame->{{False, False}, {False, False}},
   FrameLabel->{{None, None}, {None, None}},
@@ -111,7 +122,7 @@ AEl04tY=
          Part[#, 1]], 
         (Identity[#]& )[
          Part[#, 2]]}& )}},
-  PlotRange->{{0.482, 0.507}, {0, 1.2207}},
+  PlotRange->{{0.269, 0.507}, {0, 10000.}},
   PlotRangeClipping->True,
   PlotRangePadding->{{
      Scaled[0.02], 
@@ -121,27 +132,35 @@ AEl04tY=
   Ticks->{Automatic, Automatic}]], "Output",
  CellChangeTimes->{
   3.729966346747414*^9, {3.7299663767921543`*^9, 3.72996639333783*^9}, {
-   3.729966486730794*^9, 
-   3.729966533245977*^9}},ExpressionUUID->"3310e5d7-9e53-4399-8115-\
-522773a093aa"],
+   3.729966486730794*^9, 3.729966533245977*^9}, 
+   3.730218926096361*^9},ExpressionUUID->"0cd3c101-3352-4d77-9bfd-\
+41e000042251"],
 
 Cell[BoxData[
- GraphicsBox[{{}, {{{}, {{
-       {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
-        0.012833333333333334`], AbsoluteThickness[1.6], 
-        PointBox[CompressedData["
-1:eJxTTMoPSmViYGCQAmIQfdk3SSDC8oF9reKTPf/77+//d6XipZrhA/ucVzZa
-/97f268Z03/oqwaCH/J46ewjCgh+fdaekskSCP2rPl4CmojgXwUZx/HA3n3N
-0eUMEg/2M4ABQn8Yn+6mue/vw/lrZKJSrO/fh+tn0m4Xu3kOwY+w3HKibN99
-uHnr3B9WiaxD8FnABt633xlsFfE//cF+kGn+vQj+hqKMiW9r7ts7vu9VZNjx
-YD9b41Tn7hwEH+zdGIR7gI5bfswbweeAOBDunrhdnjxM2gg+yHXzpRDu4bq+
-uMCWC8FPeHpB6fbPe3D3bPv8FxjiCD4P2MP34O4BAEad5R8=
-         
-         "]]}}}, {}}}, {}, {}, {{}, {}}, {{}, {}}},
+ GraphicsBox[{{}, {{{}, {
+      {RGBColor[0.368417, 0.506779, 0.709798], PointSize[
+       0.009166666666666668], AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJxd1XlI1UEQwPHHQ0REIkQ6zA6tzJAQCZEQETOzMCkzJEQkxELE1MrMLktE
+RCREwuw2MbFAJCJERMzK7D68MlMziRCx28TEgnZG2C+08Hh8/hl2do6fb2r2
+zr1Oh8ORb37y3xOXOn/3hg8RDjmnR++uTS6/PxWAT2W05p5dhPvyx/2D3XDi
+vHW3r3wbsXYGliwYeIkbY0aPeTXipLSwke1nsGthZVRZJjbB6jtjcUrLVg9n
+IHbvr80Jd8dNk39788ffW0s2dx5jvV491nAleJ8e7FnU/rQmGrdVewcNr8L6
+HC544cDL6YSPw9YPpgLMC+JsDYiXmGiuhfhRbGhp5B58KL3iy4kIvLx4Ir55
+GX5WE21SHrI+ohfEKwdnCjJa8Stzu7pL+LiXVASvCXZr8EnCc/0w9F/9sZZ3
+etBay9GP9fmasKZbifV6uVjDJeD1erBplqosT1yWOTZ788c7a3m9T6+xSbZj
+xS0s3ZxcjsM0IJZo3XHYFNe0NI4IkQ7En001iicGrM9nSYHxJr0g/m66ObQU
+Xza3O5iOt8h4xOBf0s7++Jq0nyvepgm/tf4t5e3A16UctXiHPF8R/iPppuIb
+cr1IvEsfEOu/A5tmMRPcby3TlteGXXQhYJOsaWis6yUZu2lALNGqvbEprt/g
+zBtrD10wWKoR34x1vVRhXQd5WMc3Eeu4hWAdDy98T9p5ss96vzYMXqwJ44dS
+3gp8QMqRg5fqAsRPJN0gfFgbEPvqA/Zav3guBx+VddyAV+tCxV1+MnH4pDY0
+ntv3eG6/Y13PYz3Wuk47sa6/OqzrqhjreknDug6isI6vH9Zxc2Idj9Fua23n
+dqztV421XQqwljcFaznCsT6fDz4n6c52WW/UBsRfJVwLvnhBDt6sHyT8s1sW
+Kr4qn7dQ/A9DXuWd
+        "]]}}, {}}}, {}, {}, {{}, {}}, {{}, {}}},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{True, True},
   AxesLabel->{None, None},
-  AxesOrigin->{0.48160937500000006`, -0.48144485000000004`},
+  AxesOrigin->{0.2652812500000001, 0},
   DisplayFunction->Identity,
   Frame->{{False, False}, {False, False}},
   FrameLabel->{{None, None}, {None, None}},
@@ -159,29 +178,31 @@ uMCWC8FPeHpB6fbPe3D3bPv8FxjiCD4P2MP34O4BAEad5R8=
          Part[#, 1]], 
         (Identity[#]& )[
          Part[#, 2]]}& )}},
-  PlotRange->{{0.482, 0.507}, {-0.522461, -0.483398}},
+  PlotRange->{{0.269, 0.507}, {-1.09375, 0}},
   PlotRangeClipping->True,
   PlotRangePadding->{{
      Scaled[0.02], 
      Scaled[0.02]}, {
      Scaled[0.05], 
-     Scaled[0.05]}},
+     Scaled[0.02]}},
   Ticks->{Automatic, Automatic}]], "Output",
  CellChangeTimes->{
   3.729966346747414*^9, {3.7299663767921543`*^9, 3.72996639333783*^9}, {
-   3.729966486730794*^9, 
-   3.729966533285254*^9}},ExpressionUUID->"6a6c76f5-ad8b-48db-a9f4-\
-9153081f922f"]
+   3.729966486730794*^9, 3.729966533245977*^9}, 
+   3.7302189261489143`*^9},ExpressionUUID->"cf2ccde3-1f5f-45ef-bd39-\
+5b023cc00b39"]
 }, Open  ]],
 
 Cell["\<\
 C has a \[OpenCurlyDoubleQuote]cut-off\[CloseCurlyDoubleQuote] property; what \
 I means here is that for a given value of R, when C is lower than C_cutoff, \
 it doesn\[CloseCurlyQuote]t change the corresponding bound state energy, \
-which is around -0.5(-13.5eV) here.\
+which is around -0.5(-13.5eV) here. (data stops collecting up to R=0.267, \
+since root can no longer be found between C=10000 to 20000.)\
 \>", "Text",
- CellChangeTimes->{{3.730027012729683*^9, 
-  3.7300270844458733`*^9}},ExpressionUUID->"e01ee536-c6d5-4edc-87ea-\
+ CellChangeTimes->{{3.730027012729683*^9, 3.7300270844458733`*^9}, {
+  3.730218944710902*^9, 
+  3.730219007348304*^9}},ExpressionUUID->"e01ee536-c6d5-4edc-87ea-\
 b7ba40116aa1"]
 },
 WindowSize->{720, 856},
@@ -206,12 +227,12 @@ Cell[558, 20, 251, 6, 32, "Input", "ExpressionUUID" -> \
 Cell[CellGroupData[{
 Cell[834, 30, 1837, 48, 180, "Input", "ExpressionUUID" -> \
 "4544ec0e-f637-4ccb-a154-50a7b6398d27"],
-Cell[2674, 80, 1708, 45, 240, "Output", "ExpressionUUID" -> \
-"3310e5d7-9e53-4399-8115-522773a093aa"],
-Cell[4385, 127, 1790, 46, 222, "Output", "ExpressionUUID" -> \
-"6a6c76f5-ad8b-48db-a9f4-9153081f922f"]
+Cell[2674, 80, 2436, 56, 231, "Output", "ExpressionUUID" -> \
+"0cd3c101-3352-4d77-9bfd-41e000042251"],
+Cell[5113, 138, 2336, 54, 227, "Output", "ExpressionUUID" -> \
+"cf2ccde3-1f5f-45ef-bd39-5b023cc00b39"]
 }, Open  ]],
-Cell[6190, 176, 420, 8, 68, "Text", "ExpressionUUID" -> \
+Cell[7464, 195, 570, 10, 87, "Text", "ExpressionUUID" -> \
 "e01ee536-c6d5-4edc-87ea-b7ba40116aa1"]
 }
 ]
