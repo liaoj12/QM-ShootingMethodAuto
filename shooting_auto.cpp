@@ -2,7 +2,7 @@
   Author:         Junjie Liao
   File name:      shooting_auto.cpp
   Created date:   Feb. 22 2018
-  Last modified:  Mar. 13 2018
+  Last modified:  Mar. 26 2018
 
 Comment:
   - compile:
@@ -31,12 +31,12 @@ using namespace std;
 
 
 const double PRECISION = 0.01;
-const double REL_PRECI = 0.01;
+const double REL_PRECI = 0.1;
 const int    MAX_ITER  = 100;
 const double INCRE     = 0.001;
 const double dr        = 0.0001;
 const int    nstep     = int(50/dr);
-const int    pieces    = 254;  // 254
+const int    pieces    = 1;  // 254
 
 // functions declarations
 bool   root_found(double curr, double last);
@@ -44,7 +44,7 @@ double V_eff(double r, double R, double C);
 double schrodinger(double r, double u, double E, double R);
 void   update(double *euler_list, double *r_list, double *du_list, double *E_list, \
               double E, double R, double V);
-void   my_euler(double *&euler_list, double r, double du, double u, double dr, \
+void   my_euler(double *euler_list, double r, double du, double u, double dr, \
                 double E, double R, double V);
 double binary_search_E_bound(double *euler_list, double *r_list, double*du_list, \
                              double *u_list, double R, double C);
@@ -76,7 +76,8 @@ int main(int argc, char* argv[])
   double *R_list      = new double[pieces];     // list for R
 
   // break intervals from 0.001 to 0.507 with step 0.002
-  R_list[0] = 0.001;
+  // 0.267
+  R_list[0] = 0.201;
   for (int i=1; i<pieces; i++)
   {
     R_list[i] = (2*i+1)*INCRE;
@@ -98,20 +99,22 @@ int main(int argc, char* argv[])
     cout << "searching for bound state energy with R=" << R << endl;
 
     // start-C
-    C = 10000;
+    C = -16200;
     last_E = 1;
 
+    cout << binary_search_E_bound(euler_list, r_list, du_list, u_list, R, C) << endl;
+    cout << "C: " << C << endl;
+
     // loop to find the C for which bound state energy is approximately -0.5
-    while (C > PRECISION)
+    while (fabs(C) > PRECISION && false)
     {
       // "binary search energy"
       E_b = binary_search_E_bound(euler_list, r_list, du_list, u_list, R, C);
 
       if (E_b < 0)
       {
-        // cout << "found E_b: " << E_b << " with C: " << C << endl;
+        cout << "found E_b: " << E_b << " with C: " << C << endl;
         // check if it's close to 0.5
-        // if (fabs((E_b+0.5)/0.5) <= REL_PRECI)
         if (E_b < -0.5)
         {
           // approach C to meet the precision
@@ -122,8 +125,15 @@ int main(int argc, char* argv[])
           // !(fabs(C_min-C_max) <= PRECISION)
           while (!(fabs((E_tmp+0.5)/0.5) <= REL_PRECI))
           {
+            cout << "Trying to reach a given precision." << endl;
             E_tmp = binary_search_E_bound(euler_list, r_list, du_list, u_list, R, C_curr);
+            if (E_tmp > 0)
+            {
+              cout << "Abort, no negative bound state energy is found!" << endl;
+              return 1;
+            }
 
+            cout << "E_tmp: " << E_tmp << " with C_curr: " << C_curr << endl;
             if (E_tmp > E_b)
             {
               C_max = C_curr;
@@ -153,7 +163,6 @@ int main(int argc, char* argv[])
         // update last to the newest E_b found
         last_E = E_b;
       }
-      // case that E_b is not found
 
       // update C
       C /= 2;
@@ -189,7 +198,7 @@ bool root_found(double curr, double last)
 
 //*****************************************************************************
 //  This function calculates the effective potential at a given position r; if
-//  r <= R, returns a positive energy, otherwise, returns -1/r^3.
+//  r <= R, returns a constant energy C, otherwise, returns -1/r^3.
 //*****************************************************************************
 double V_eff(double r, double R, double C)
 {
@@ -212,7 +221,7 @@ double schrodinger(double r, double u, double E, double R, double V)
 //  This function implements the euler method for solving the schrodinger
 //  equation
 //*****************************************************************************
-void my_euler(double *&euler_list, double r, double du, double u, double dr, \
+void my_euler(double *euler_list, double r, double du, double u, double dr, \
               double E, double R, double V)
 {
   // calculates r_next, u_next and du_next in ordered
