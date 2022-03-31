@@ -1,5 +1,4 @@
 /*
-  Author:         Junjie Liao
   File name:      shooting_auto.cpp
   Created date:   Feb. 22 2018
   Last modified:  Mar. 26 2018
